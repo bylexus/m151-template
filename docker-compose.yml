@@ -5,7 +5,7 @@ services:
     container_name: m151-docsify
     ports:
       - "10000:10000"
-      - "35729:35729"
+      - "35729:35729" # live-reload-Port
     volumes:
       - ./doc:/site
     working_dir: /site
@@ -30,6 +30,7 @@ services:
     container_name: m151-db
     volumes:
         - ./db-data/:/var/lib/mysql/
+        - ./db-init/:/docker-entrypoint-initdb.d/
     ports:
         - "3306:3306"
     command: --default-authentication-plugin=mysql_native_password
@@ -37,4 +38,3 @@ services:
         - MYSQL_ROOT_PASSWORD=root
         - MYSQL_USER=m151
         - MYSQL_PASSWORD=m151
-        - MYSQL_DATABASE=m151
