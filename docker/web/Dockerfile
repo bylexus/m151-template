@@ -38,3 +38,5 @@ ENV LC_ALL de_CH.UTF-8
 RUN cp /usr/share/zoneinfo/Europe/Zurich /etc/localtime
 
 WORKDIR /var/www/html
+
+CMD composer install && apache2-foreground
