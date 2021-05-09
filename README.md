@@ -11,7 +11,7 @@ Benutzung:
 # Starten aller Dienste:
 $ docker-compose up
 
-# Web-Applikation: Abhängigkeiten und Autoloader konfigurieren:
+# (optional, da automatisch beim Start) Web-Applikation: Abhängigkeiten und Autoloader konfigurieren:
 $ docker exec -ti m151-web composer install
 ```
 
@@ -22,4 +22,4 @@ Danach stehen folgende Dienste zur Verfügung:
 * `m151-db`: MySQL-Server, Port 3306, user: `m151`, pw: `m151`
 * `m151-docsify`: http://localhost:10000/
 
-(c) Alexander Schenkel, alex-m151@alexi.ch
+(c) Alexander Schenkel, alex@alexi.ch
