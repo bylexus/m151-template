@@ -63,12 +63,13 @@ Ich werden Ihr Projekt folgendermassen testen:
 $ git clone https://github.com/pfad/zu/ihrem/repo
 $ cd pfad-zum-repo
 # 2. Starten aller Dienste:
-$ docker-compose up
+$ docker-compose up --build
 ```
 
 Danach muss Ihr Projekt laufen! Das bedingt:
 
-* dass Sie einen sauberen DB-Dump in `db-init/001_init.sql` erzeugen (siehe `mysqldump`)
+* dass Sie einen sauberen DB-Dump Ihrer DB in `db-init/001_init.sql` erzeugen (siehe `mysqldump`),
+  inkl. benötigter MySQL-User!
 * dass ALLE benötigen Dateien, inkl. Konfiguration und Docsify-Dokumentation, in Ihrem Repo zu finden sind!
 
 Projekt-Dokumentation
