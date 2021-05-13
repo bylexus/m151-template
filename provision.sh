@@ -1,5 +1,19 @@
 #!/bin/bash
 
+# disable IPv6, seems to create network resolution troubles:
+echo "Disabling IPv6"
+echo "net.ipv6.conf.all.disable_ipv6 = 1
+      net.ipv6.conf.default.disable_ipv6 = 1
+      net.ipv6.conf.lo.disable_ipv6 = 1" >> /etc/sysctl.conf
+sysctl -p
+
+mkdir -p /etc/docker/
+cat <<EOF > /etc/docker/daemon.json
+{
+  "ipv6": false
+}
+EOF
+
 apt-get update && apt-get dist-upgrade -y
 apt-get install -y \
     curl \
