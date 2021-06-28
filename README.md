@@ -86,5 +86,4 @@ Wenn man XDebug benutzen will, um PHP-code im Web-container (`m151-web`) zu debu
 * den `docker-web`-Container neu bilden: `docker-compose build web`
 * den web-Container entfernen, neu starten: `docker-compose kill web && docker-compose up -d web`
 
-
 (c) Alexander Schenkel, alex@alexi.ch

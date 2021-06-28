@@ -20,21 +20,21 @@ Vagrant.configure("2") do |config|
   # config.vm.network "public_network"
 
   # or use a private network for host-only communication:
-  config.vm.network "private_network", ip: "10.10.10.10"
+  # config.vm.network "private_network", ip: "10.10.10.10"
 
   # or use a private network, and map the needed ports:
-  # # docker port 8020: web server
-  # config.vm.network "forwarded_port", guest: 8020, host: 8020
-  # # docker port 8030: websocket server
-  # config.vm.network "forwarded_port", guest: 8030, host: 8030
-  # # docker port 10000: docsify
-  # config.vm.network "forwarded_port", guest: 10000, host: 10000
-  # # docker port 35729: live reload
-  # config.vm.network "forwarded_port", guest: 35729, host: 35729
-  # # docker port 8080: PlantUML
-  # config.vm.network "forwarded_port", guest: 10001, host: 10001
-  # # docker port 3306: MySQL server
-  # config.vm.network "forwarded_port", guest: 3306, host: 3306
+  # docker port 8020: web server
+  config.vm.network "forwarded_port", guest: 8020, host: 8020
+  # docker port 8030: websocket server
+  config.vm.network "forwarded_port", guest: 8030, host: 8030
+  # docker port 10000: docsify
+  config.vm.network "forwarded_port", guest: 10000, host: 10000
+  # docker port 35729: live reload
+  config.vm.network "forwarded_port", guest: 35729, host: 35729
+  # docker port 8080: PlantUML
+  config.vm.network "forwarded_port", guest: 10001, host: 10001
+  # docker port 3306: MySQL server
+  config.vm.network "forwarded_port", guest: 3306, host: 3306
 
   config.vm.synced_folder ".", "/vagrant"
   # for mysql to work correctly, we need to mount the db data dir writable for all:
