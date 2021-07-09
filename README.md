@@ -73,7 +73,6 @@ Nun kann eine VM für VMWare erstellt werden:
 $ vagrant up --provider vmware_desktop
 ```
 
-
 ## PHP und XDebug
 
 Wenn man XDebug benutzen will, um PHP-code im Web-container (`m151-web`) zu debuggen, ist folgendes anzupassen:

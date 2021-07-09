@@ -59,7 +59,8 @@ Vagrant.configure("2") do |config|
         ansible.playbook = "provisioning/ansible-playbook.yml"
         ansible.galaxy_role_file = "provisioning/ansible-galaxy-requirements.yml"
         ansible.extra_vars = {
-          vagrant_provider: "virtualbox"
+          vagrant_provider: "virtualbox",
+          student_user: "m151"
         }
     end
   end
@@ -73,7 +74,8 @@ Vagrant.configure("2") do |config|
         ansible.playbook = "provisioning/ansible-playbook.yml"
         ansible.galaxy_role_file = "provisioning/ansible-galaxy-requirements.yml"
         ansible.extra_vars = {
-          vagrant_provider: "vmware"
+          vagrant_provider: "vmware",
+          student_user: "m151"
         }
     end
   end
