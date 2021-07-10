@@ -70,6 +70,9 @@ Vagrant.configure("2") do |config|
     vb.memory = 2048
     vb.cpus = 2
 
+    # config.vm.network "forwarded_port", guest: 8020, host: 8020
+    # config.vm.network "private_network", ip: "10.10.10.10"
+
     config.vm.provision "ansible_local" do |ansible|
         ansible.playbook = "provisioning/ansible-playbook.yml"
         ansible.galaxy_role_file = "provisioning/ansible-galaxy-requirements.yml"
