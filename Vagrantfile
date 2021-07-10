@@ -4,6 +4,9 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+# BZT Modulname (z.B. "m151"). Daraus werden dann VMs und User ersellt, also bitte keine Spaces, sonderzeichen etc.
+bzt_modulname = "m151"
+
 Vagrant.configure("2") do |config|
   # The most common configuration options are documented and commented below.
   # For a complete reference, please see the online documentation at
@@ -12,7 +15,7 @@ Vagrant.configure("2") do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "hashicorp/bionic64"
-  config.vm.hostname = "m151vm"
+  config.vm.hostname = bzt_modulname + "vm"
 
   # use a public network bridge with a DHCP ip:
   # config.vm.network "public_network"
@@ -40,7 +43,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provider "virtualbox" do |vb, override|
     vb.gui = true
-    vb.name = "m151vm"
+    vb.name = bzt_modulname + "vm"
     vb.memory = 2048
     vb.cpus = 2
 
@@ -60,7 +63,7 @@ Vagrant.configure("2") do |config|
         ansible.galaxy_role_file = "provisioning/ansible-galaxy-requirements.yml"
         ansible.extra_vars = {
           vagrant_provider: "virtualbox",
-          student_user: "m151"
+          student_user: bzt_modulname
         }
     end
   end
@@ -78,7 +81,7 @@ Vagrant.configure("2") do |config|
         ansible.galaxy_role_file = "provisioning/ansible-galaxy-requirements.yml"
         ansible.extra_vars = {
           vagrant_provider: "vmware",
-          student_user: "m151"
+          student_user: bzt_modulname
         }
     end
   end

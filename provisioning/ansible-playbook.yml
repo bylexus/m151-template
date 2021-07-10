@@ -90,7 +90,7 @@
         # ansible all -i localhost, -m debug -a "msg={{ 'xxxxx' | password_hash('sha512', 'somesecretsalt') }}"
         password: "$6$pwsalt$XdYOvh.vfdHZtOg7IEBLxAGikA.hb7DAvme/3.eG9SRIJIpS6O0Dyv2aYSr32wfUAE8o/6XKbzBEj2BB1DQuN."
         shell: /bin/bash
-        home: "/home/{{ student_user }}
+        home: "/home/{{ student_user }}"
         groups: "docker,sudo"
         append: yes
 
