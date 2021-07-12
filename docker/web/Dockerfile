@@ -11,6 +11,7 @@ RUN apt-get update && \
         libxml2-dev \
         libzip-dev \
         locales \
+        unzip \
     && docker-php-ext-install -j$(nproc) zip opcache \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) gd \
