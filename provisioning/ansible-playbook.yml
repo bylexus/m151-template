@@ -24,6 +24,7 @@
               - graphviz
               - git
               - xfce4
+              - ristretto
               - lightdm
               - lightdm-gtk-greeter
               - xfce4-whiskermenu-plugin
