@@ -30,6 +30,7 @@
               - xfce4-whiskermenu-plugin
               - gnupg
               - lsb-release
+              - mysql-workbench
 
     - name: Install virtualbox guest tools
       when: vagrant_provider == "virtualbox"
