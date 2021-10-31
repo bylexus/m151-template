@@ -114,6 +114,7 @@
             - bmewburn.vscode-intelephense-client
             - jebbs.plantuml
             - yzhang.markdown-all-in-one
+            - ms-azuretools.vscode-docker
           visual_studio_code_settings: {
             "plantuml.server": "https://www.plantuml.com/plantuml"
           }
