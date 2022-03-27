@@ -96,6 +96,13 @@
         groups: "docker,sudo"
         append: yes
 
+    - name: Copy web project to webroot
+      copy:
+        src: /vagrant/
+        dest: "/home/{{ student_user }}/project/"
+        owner: "{{ student_user }}"
+        group: "{{ student_user }}"
+
 
 - name: Install VS Code
   hosts: all
@@ -110,7 +117,7 @@
       users:
         - username: "{{ student_user }}"
           visual_studio_code_extensions:
-            - felixfbecker.php-pack
+            - xdebug.php-pack
             - bmewburn.vscode-intelephense-client
             - jebbs.plantuml
             - yzhang.markdown-all-in-one

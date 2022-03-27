@@ -4,7 +4,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# BZT Modulname (z.B. "m151"). Daraus werden dann VMs und User ersellt, also bitte keine Spaces, sonderzeichen etc.
+# BZT Modulname (z.B. "m151"). Daraus werden dann VMs und User erstellt, also bitte keine Spaces, sonderzeichen etc.
 bzt_modulname = "m151"
 
 Vagrant.configure("2") do |config|
@@ -16,6 +16,10 @@ Vagrant.configure("2") do |config|
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "hashicorp/bionic64"
   config.vm.hostname = bzt_modulname + "vm"
+
+  # Note: if for some reason you have too many NICs in your VM, you can remove them using vboxmanage:
+  # VBoxManage showvminfo m151vm | less
+  # VBoxManage modifyvm m151vm --nic5 none
 
   # use a public network bridge with a DHCP ip:
   # config.vm.network "public_network"
@@ -47,7 +51,7 @@ Vagrant.configure("2") do |config|
     vb.memory = 2048
     vb.cpus = 2
 
-    config.vm.network "private_network", ip: "10.10.10.10"
+    # vb.network "private_network", ip: "10.10.10.10"
 
     vb.customize ["modifyvm", :id, "--vram", "32"]
     vb.customize ["modifyvm", :id, "--graphicscontroller", "vmsvga"]
@@ -58,7 +62,16 @@ Vagrant.configure("2") do |config|
     vb.customize ["modifyvm", :id, "--draganddrop", "bidirectional"]
     vb.customize ["modifyvm", :id, "--paravirtprovider", "kvm"]
 
+
+    # shell script:
+    # config.vm.provision "shell", path: "script.sh"
+
+    # shell inline:
+    config.vm.provision "shell", inline: "apt-get update && apt-get upgrade -y && apt-get install -y python3.8 ansible"
+
     config.vm.provision "ansible_local" do |ansible|
+        # ansible.install_mode = "pip"
+        # ansible.pip_install_cmd = "curl -s https://bootstrap.pypa.io/get-pip.py | sudo python3.8"
         ansible.playbook = "provisioning/ansible-playbook.yml"
         ansible.galaxy_role_file = "provisioning/ansible-galaxy-requirements.yml"
         ansible.extra_vars = {
@@ -68,21 +81,23 @@ Vagrant.configure("2") do |config|
     end
   end
 
-  config.vm.provider "vmware_desktop" do |vb, override|
-    vb.gui = true
-    vb.memory = 2048
-    vb.cpus = 2
+  # config.vm.provider "vmware_desktop" do |vb, override|
+  #   vb.gui = true
+  #   vb.memory = 2048
+  #   vb.cpus = 2
 
-    # config.vm.network "forwarded_port", guest: 8020, host: 8020
-    # config.vm.network "private_network", ip: "10.10.10.10"
+  #   # config.vm.network "forwarded_port", guest: 8020, host: 8020
+  #   # config.vm.network "private_network", ip: "10.10.10.10"
 
-    config.vm.provision "ansible_local" do |ansible|
-        ansible.playbook = "provisioning/ansible-playbook.yml"
-        ansible.galaxy_role_file = "provisioning/ansible-galaxy-requirements.yml"
-        ansible.extra_vars = {
-          vagrant_provider: "vmware",
-          student_user: bzt_modulname
-        }
-    end
-  end
+  #   config.vm.provision "ansible_local" do |ansible|
+  #       ansible.install_mode = "pip"
+  #       ansible.pip_install_cmd = "curl -s https://bootstrap.pypa.io/get-pip.py | sudo python3"
+  #       ansible.playbook = "provisioning/ansible-playbook.yml"
+  #       ansible.galaxy_role_file = "provisioning/ansible-galaxy-requirements.yml"
+  #       ansible.extra_vars = {
+  #         vagrant_provider: "vmware",
+  #         student_user: bzt_modulname
+  #       }
+  #   end
+  # end
 end
