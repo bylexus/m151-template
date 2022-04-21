@@ -3,7 +3,7 @@
     "description": "M151 - DB in Webapp einbinden",
     "type": "project",
     "require": {
-        "php": ">= 7.2"
+        "php": ">= 8"
     },
     "autoload": {
         "psr-4": {

@@ -26,7 +26,7 @@ services:
         - ./web:/var/www/html
 
   db:
-    image: mysql:8
+    image: mariadb:10.7
     container_name: m151-db
     volumes:
         - ./db-data/:/var/lib/mysql/
@@ -35,8 +35,8 @@ services:
         - "3306:3306"
     # innodb_use_native_aio=0 is needed when using a vritualbox shared folder mount
     # default-authentication-plugin is needed to allow e.g. workbench client to connect with a password
-    command: "--default-authentication-plugin=mysql_native_password --innodb_use_native_aio=0 --lower_case_table_names=1"
+    command: "--lower_case_table_names=1"
     environment:
-        - MYSQL_ROOT_PASSWORD=root
-        - MYSQL_USER=m151
-        - MYSQL_PASSWORD=m151
+        - MARIADB_ROOT_PASSWORD=root
+        - MARIADB_USER=m151
+        - MARIADB_PASSWORD=m151

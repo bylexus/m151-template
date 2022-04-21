@@ -1,12 +1,12 @@
 Projekt Web-Applikation mit Datenbank (Modul 151)
 ==================================================
 
-[**LBV Modul 151-5 - 1 Elemente - Bearbeiten eines Projekts**](https://cf.ict-berufsbildung.ch/modules.php?name=Mbk&a=20101&cmodnr=151&noheader=1)
+[**LBV Modul 151-5 - 1 Elemente - Bearbeiten eines Projekts**](https://modulbaukasten.ch/)
 
 Ziel
 --------
 
-Im Rahmen einer Projektarbeit entwickeln Sie in Einzelarbeit eine Web-Applikation mit Datenbank, welche heutigen Sicherheits-Anforderungen gerecht werden kann.
+Im Rahmen einer Projektarbeit entwickeln Sie in **Einzel- oder Gruppenarbeit** eine Web-Applikation mit Datenbank, welche heutigen Sicherheits-Anforderungen gerecht werden kann.
 Dabei entwerfen Sie selbständig ein kleines Web-MVC-Framework und implementieren die notwendige Funktionalität.
 
 Sie haben bis Ende Semester Zeit, Die Web-Applikation zu entwerfen und umzusetzen. Während des Unterrichts lernen Sie die notwendigen Kenntnisse 
@@ -17,31 +17,34 @@ Ziel ist eine **dokumentierte** und **lauffähige** Web-Applikation, welche die 
 Projektvorgaben
 ----------------
 
-* Die Projektarbeit wird in **Einzelarbeit** umgesetzt.
-* Sie definieren selber ein **Pflichtenheft** zu Ihrer Applikation. Dies kann z.B. ein Blog-System, ein Web-Forum, eine Medien- resp. Bilderverwaltung
-  oder ein RSS-Feed-Reader sein. Eigene Vorschläge sind sehr willkommen, werden aber mit der Lehrperson abgesprochen.
+* Die Projektarbeit wird in **Einzel- oder Gruppenarbeit** umgesetzt: Eine Gruppe besteht aus **max. 2 Personen**.
+  * Bei Gruppenarbeiten erhalten beide Schüler/innen dieselbe Note.
+  * Der Bewertungsmasstab wird bei Gruppenarbeit strenger angewendet: Ich erwarte mehr "Output" von einer Gruppe als von einer Einzelperson.
+* Sie definieren selber ein **Pflichtenheft** zu Ihrer Applikation. Dies kann **z.B.** ein Blog-System, ein Web-Forum, eine Medien- resp. Bilderverwaltung
+  oder ein RSS-Feed-Reader sein. **Eigene Vorschläge sind sehr willkommen**, werden aber mit der Lehrperson abgesprochen.
 * Wählen Sie die Applikation nicht zu umfangreich: **Das Projekt muss zum Schluss des Semesters abgeschlossen sein.**
-  Die Applikation sollte **aus 5-8 Haupt-Modellen** (ein Modell ist z.B. Benutzer, Blog-Eintrag, Kategorie, Tag, Bild etc.) bestehen.
+  Die Applikation sollte **aus ca. 5-8 Haupt-Modellen** (ein Modell ist z.B. Benutzer, Blog-Eintrag, Kategorie, Tag, Bild etc.) bestehen.
 * Die Applikation **muss verschiedene Benutzer via Login-Mechanismus unterscheiden.**
+* Die Applikation **muss Zugriffe auf Datensätze anhand des Logins / eines Rollenkonzeptes gewähren / unterbinden.**
 * Mein Ziel ist, dass Sie während des Unterrichts jeweils noch Zeit für die Arbeit / Fragen haben.
 * Sie dürfen alle Informationen verwenden: Unterrichtsunterlagen, Internet. Bei Unklarheiten oder grösseren Problemen wenden Sie sich an die Lehrperson.
 
 Vorgaben Web-Applikation
 ---------------------------
-* Als Server-Programmiersprache wird **PHP >= 7.4** auf einem **Apache Web Server** via Docker-Container eingesetzt.
-* Für das **Frontend** wählen Sie HTML/CSS/JavaScript.
-* Als Datenbank wird eine **MySQL-Datenbank** eingesetzt.
+* Als Server-Programmiersprache wird **PHP >= 8.1** auf einem **Apache Web Server** via Docker-Container eingesetzt.
+* Für das **Frontend** wählen Sie HTML/CSS/JavaScript. Es darf auch eine **Single Page Applikation** mit einem JavaScript-Framework (z.B. VueJS) sein.
+* Als Datenbank wird eine **MariaDB (MySQL)-Datenbank** eingesetzt.
 * Sie setzen **KEIN PHP-Web-Framework** ein: Sie entwerfen **ein eigenes Web-MVC-Framework**. Die Grundlagen dazu werden in den ersten Unterrichtslektionen erarbeitet.
 * Zusätzliche Bibliotheken oder Paket-Manager (z.B. php composer, Template-Engine) dürfen eingesetzt werden.
 * Frontend-Bibliotheken / Frameworks (z.B. Bootstrap CSS Framework) sind erlaubt. Das Aussehen / UI-Design wird aber NICHT bewertet.
 
 Abgabe
 --------
-* Abgabedatum Dokumentation+Code: **18.12.2021** (Vor den Weihnachtsferien)
-* Präsentationen: 05.01.2022
+* Abgabedatum Dokumentation+Code: **23.12.2022 23:55** (Vor den Weihnachtsferien)
+* Präsentationen: 11.01.2023
 * Abgabe-Umfang:
   * **Projekt-Dokumentation** (siehe nachfolgendes Kapitel)
-  * **Projekt-Präsentation** inkl. Live-Demo (am 05.01.2022)
+  * **Projekt-Präsentation** inkl. Live-Demo (am 11.01.2023)
     Dauer: 8-15min Vortrag, dann Demo:
     * Vortrag: Kurz-Zusammenfassung des Projektes, wie sind Sie vorgegangen, wichtige Architektur-Entscheide aufzeigen, Security-Massnahmen
     * Demo: Präsentation des Projektes an einem lauffähigen System
@@ -49,7 +52,7 @@ Abgabe
     * Die gesamte Applikation muss im Github-Classroom-Repo, Main-Branch vorhanden sein.
     * Ein SQL-Dump Ihrer Datenbank muss **zwingend** ebenfalls im Repo vorhanden sein:
       * Dump in `db-init/001_init.sql`
-      * Der Dump wird beim ersten Start von MySQL automatisch importiert: Ich erwarte, dass dies OHNE FEHLER durchläuft.
+      * Der Dump wird beim ersten Start von MariaDB automatisch importiert: Ich erwarte, dass dies OHNE FEHLER durchläuft.
     * Allfällige Konfigurationen (z.B. DB-Parameter, config-Files) müssen ebenfalls im Repo sein, ODER es muss beschrieben werden,
       wo diese anzupassen sind.
     * Ich muss die Applikation durch minimalen Aufand (Repo klonen, Docker starten) zum Laufen bringen können!
@@ -68,7 +71,7 @@ $ docker-compose up --build
 
 Danach muss Ihr Projekt laufen! Das bedingt:
 
-* dass Sie einen sauberen DB-Dump Ihrer DB in `db-init/001_init.sql` erzeugen (siehe `mysqldump`),
+* dass Sie einen sauberen DB-Dump Ihrer DB in `db-init/001_init.sql` erzeugen (siehe `mysqldump`, <https://mariadb.com/kb/en/mariadb-dumpmysqldump/>),
   inkl. benötigter MySQL-User!
 * dass ALLE benötigen Dateien, inkl. Konfiguration und Docsify-Dokumentation, in Ihrem Repo zu finden sind!
 
@@ -126,4 +129,3 @@ Benotung
     * Zeigt wichtige / sinnvolle Aspekte der Arbeit bezogen auf das Thema
     * Gute Vorbereitung
     * Zeitrahmen eingehalten (8-15min Präs. + 5min Demo)
-

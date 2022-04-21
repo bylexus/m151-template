@@ -1,4 +1,4 @@
-FROM php:7.4-apache
+FROM php:8.1-apache
 
 RUN apt-get update && \
         apt-get install -y --no-install-recommends \
@@ -11,12 +11,11 @@ RUN apt-get update && \
         libzip-dev \
         locales \
         unzip \
-    && docker-php-ext-install -j$(nproc) zip opcache \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install -j$(nproc) gd \
+    && docker-php-ext-install -j$(nproc) zip opcache gd \
     && docker-php-ext-install pdo_mysql
 
-RUN yes ''| pecl install xdebug-2.9.5 && docker-php-ext-enable xdebug
+RUN yes ''| pecl install xdebug-3.1.4 && docker-php-ext-enable xdebug
 
 # install composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \

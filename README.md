@@ -19,7 +19,7 @@ Danach stehen folgende Dienste zur Verfügung:
 
 * `m151-web`: http://localhost:8020/webroot/
 * `plantuml`: http://localhost:10001/
-* `m151-db`: MySQL-Server, Port 3306, user: `m151`, pw: `m151`
+* `m151-db`: MariaDB (Fork von MySQL)-Server, Port 3306, user: `m151`, pw: `m151`
 * `m151-docsify`: http://localhost:10000/
 
 ## Vagrant VM Build
@@ -55,7 +55,7 @@ somit sind die Container erreichbar über:
 
 * `m151-web`: http://10.10.10.10:8020/webroot/
 * `plantuml`: http://10.10.10.10:10001/
-* `m151-db`: MySQL-Server, IP: 10.10.10.10, Port 3306, user: `m151`, pw: `m151`
+* `m151-db`: MariaDB-Server, IP: 10.10.10.10, Port 3306, user: `m151`, pw: `m151`
 * `m151-docsify`: http://10.10.10.10:10000/
 
 Wenn ein anderes/zusätzliches Netzwerk gewünscht wird, kann das im `Vagrantfile` angepasst werden.

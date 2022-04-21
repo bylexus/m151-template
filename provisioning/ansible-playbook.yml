@@ -96,12 +96,13 @@
         groups: "docker,sudo"
         append: yes
 
-    - name: Copy web project to webroot
-      copy:
-        src: /vagrant/
-        dest: "/home/{{ student_user }}/project/"
-        owner: "{{ student_user }}"
-        group: "{{ student_user }}"
+    # we clone it in the lesson directly from github classroom:
+    # - name: Copy web project to webroot
+    #   copy:
+    #     src: /vagrant/
+    #     dest: "/home/{{ student_user }}/project/"
+    #     owner: "{{ student_user }}"
+    #     group: "{{ student_user }}"
 
 
 - name: Install VS Code
