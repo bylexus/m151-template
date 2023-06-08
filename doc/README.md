@@ -12,7 +12,7 @@ Dieses Repository beinhaltet:
 * ein Docker-Container für [Docsify](https://docsify.js.org/) (diese Projektdoku, Port 10000, Seite: `/doc/`)
 * ein Docker-Container für [PlantUML](https://plantuml.com/) (lokaler PlantUML-Render-Server, Port 10001)
 * ein Docker-Container für einen MariaDB-(Fork von MySQL)-Server (Port 3306, DB: m151, daten: `/db-data`)
-* ein Docker-Container für einen Apache-PHP 8.1-Server (Port 8020, Webroot: `/web/webroot`)
+* ein Docker-Container für einen Apache-PHP 8.2-Server (Port 8020, Webroot: `/web/webroot`)
 * ein docker-compose-File, um alles miteinander zu starten
 * ein Web-Skelett (`/web`)
 

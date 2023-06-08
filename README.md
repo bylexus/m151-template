@@ -78,8 +78,7 @@ $ vagrant up --provider vmware_desktop
 Wenn man XDebug benutzen will, um PHP-code im Web-container (`m151-web`) zu debuggen, ist folgendes anzupassen:
 
 * im File `docker/web/php.ini` muss die Remote-XDebug-IP gesetzt werden:
-    * für Benutzung via lokalem Docker: `xdebug.remote_host = host.docker.internal`
-    * für die Benutzung in der VirtualBox VM, mit dem privaten Netzwerk: `xdebug.remote_host = 10.10.10.1`
+* für Benutzung via lokalem Docker: `xdebug.remote_host = host.docker.internal`
 * den `docker-web`-Container neu bilden: `docker-compose build web`
 * den web-Container entfernen, neu starten: `docker-compose kill web && docker-compose up -d web`
 
