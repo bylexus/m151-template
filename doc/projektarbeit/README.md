@@ -6,7 +6,7 @@ Projekt Web-Applikation mit Datenbank (Modul 151)
 Ziel
 --------
 
-Im Rahmen einer Projektarbeit entwickeln Sie in **Einzel- oder Gruppenarbeit** eine Web-Applikation mit Datenbank, welche heutigen Sicherheits-Anforderungen gerecht werden kann.
+Im Rahmen einer Projektarbeit entwickeln Sie in **Einzelarbeit** eine Web-Applikation mit Datenbank, welche heutigen Sicherheits-Anforderungen gerecht werden kann.
 Dabei entwerfen Sie selbständig ein kleines Web-MVC-Framework und implementieren die notwendige Funktionalität.
 
 Sie haben bis Ende Semester Zeit, Die Web-Applikation zu entwerfen und umzusetzen. Während des Unterrichts lernen Sie die notwendigen Kenntnisse 
@@ -17,9 +17,7 @@ Ziel ist eine **dokumentierte** und **lauffähige** Web-Applikation, welche die 
 Projektvorgaben
 ----------------
 
-* Die Projektarbeit wird in **Einzel- oder Gruppenarbeit** umgesetzt: Eine Gruppe besteht aus **max. 2 Personen**.
-  * Bei Gruppenarbeiten erhalten beide Schüler/innen dieselbe Note.
-  * Der Bewertungsmasstab wird bei Gruppenarbeit strenger angewendet: Ich erwarte mehr "Output" von einer Gruppe als von einer Einzelperson.
+* Die Projektarbeit wird in **Einzelarbeit** umgesetzt. Jeder von Ihnen entwickelt ein eigenes Projekt.
 * Sie definieren selber ein **Pflichtenheft** zu Ihrer Applikation. Dies kann **z.B.** ein Blog-System, ein Web-Forum, eine Medien- resp. Bilderverwaltung
   oder ein RSS-Feed-Reader sein. **Eigene Vorschläge sind sehr willkommen**, werden aber mit der Lehrperson abgesprochen.
 * Wählen Sie die Applikation nicht zu umfangreich: **Das Projekt muss zum Schluss des Semesters abgeschlossen sein.**
@@ -31,7 +29,7 @@ Projektvorgaben
 
 Vorgaben Web-Applikation
 ---------------------------
-* Als Server-Programmiersprache wird **PHP >= 8.1** auf einem **Apache Web Server** via Docker-Container eingesetzt.
+* Als Server-Programmiersprache wird **PHP >= 8.2** auf einem **Apache Web Server** via Docker-Container eingesetzt.
 * Für das **Frontend** wählen Sie HTML/CSS/JavaScript. Es darf auch eine **Single Page Applikation** mit einem JavaScript-Framework (z.B. VueJS) sein.
 * Als Datenbank wird eine **MariaDB (MySQL)-Datenbank** eingesetzt.
 * Sie setzen **KEIN PHP-Web-Framework** ein: Sie entwerfen **ein eigenes Web-MVC-Framework**. Die Grundlagen dazu werden in den ersten Unterrichtslektionen erarbeitet.
@@ -40,11 +38,11 @@ Vorgaben Web-Applikation
 
 Abgabe
 --------
-* Abgabedatum Dokumentation+Code: **23.12.2022 23:55** (Vor den Weihnachtsferien)
-* Präsentationen: 11.01.2023
+* Abgabedatum Dokumentation+Code: **22.12.2023 23:55** (Vor den Weihnachtsferien)
+* Präsentationen: 10.01.2024
 * Abgabe-Umfang:
   * **Projekt-Dokumentation** (siehe nachfolgendes Kapitel)
-  * **Projekt-Präsentation** inkl. Live-Demo (am 11.01.2023)
+  * **Projekt-Präsentation** inkl. Live-Demo (am 10.01.2024)
     Dauer: 8-15min Vortrag, dann Demo:
     * Vortrag: Kurz-Zusammenfassung des Projektes, wie sind Sie vorgegangen, wichtige Architektur-Entscheide aufzeigen, Security-Massnahmen
     * Demo: Präsentation des Projektes an einem lauffähigen System
@@ -84,8 +82,9 @@ Ihre Dokumentation muss **mindestens** folgende Kapitel umfassen:
 * Titelseite mit: Name, Klasse, Druckdatum, Modul-Name, Projekt-Name
 * Pflichtenheft: Ein von Ihnen selbst erstellter Anforderungskatalog. Ich erwarte:
   * eine **Kurzbeschreibung der Applikation**: Beschreiben Sie mir Ihre Idee (ca. 1/2 A4-Seite) in einem "Management Summary".
-  * eine Kurzberschreibung von **geplanten Datenmodellen** und wichtigen Eigenschaften (Bsp: "Benutzer mit mind. Username/Passwort")
+  * eine Kurzbeschreibung von **geplanten Datenmodellen** und wichtigen Eigenschaften (Bsp: "Benutzer mit mind. Username/Passwort")
   * ein **Maskenablauf** resp. Seitenplanung mit der jeweiligen Funktionalität
+  * eine Erwähnung, was explizit NICHT implementiert wurde (ev. aber noch als Ausbaustufe angedacht werden könnte)
 * Architektur: In diesem Kapitel zeigen Sie die von Ihnen gewählte Architektur auf:
     * Web-Framework: Wie funktioniert Ihr MVC-Framework? Zeigen Sie dies mittels
       geeigneter UML-Diagrammen und Beschreibungen der Funktionsweise. Es muss einem Aussenstehenden klar werden,
